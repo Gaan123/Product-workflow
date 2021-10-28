@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Acme\TestBundle\Document\Product;
-use App\Acme\TestBundle\Document\Ticket;
-use App\Document\BeerGlass;
+use App\Gagan\Workflow\Document\Product;
 use App\Workflow\Transition\TicketTransitions;
 use Doctrine\ODM\MongoDB\DocumentManager;
-use MongoDB\Driver\Exception\LogicException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Acme\TestBundle\EventListener;
+namespace App\Gagan\Workflow\EventListener;
 
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

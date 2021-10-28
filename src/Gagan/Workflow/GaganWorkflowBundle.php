@@ -1,10 +1,10 @@
 <?php
 // src/Acme/TestBundle/AcmeTestBundle.php
-namespace App\Acme\TestBundle;
+namespace App\Gagan\Workflow;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AcmeTestBundle extends Bundle
+class GaganWorkflowBundle extends Bundle
 {
     public function getPath(): string
     {

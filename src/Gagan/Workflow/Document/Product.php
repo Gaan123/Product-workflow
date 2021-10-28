@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Acme\TestBundle\Document;
+namespace App\Gagan\Workflow\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 use Symfony\Component\Validator\Constraints as Assert;

@@ -2,7 +2,7 @@ controllers:
     resource: ../../src/Controller/
     type: annotation
 src:
-    resource: ../../src/Acme/TestBundle/Controller/
+    resource: ../../src/Gagan/Workflow/Controller/
     type: annotation
 kernel:
     resource: ../../src/Kernel.php

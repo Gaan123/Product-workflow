@@ -16,6 +16,7 @@
         "doctrine/orm": "^2.10",
         "dwgebler/security-headers-bundle": "dev-master",
         "lexik/jwt-authentication-bundle": "^2.13",
+        "nelmio/cors-bundle": "^2.1",
         "phpdocumentor/reflection-docblock": "^5.3",
         "sensio/framework-extra-bundle": "^6.1",
         "symfony/asset": "5.3.*",

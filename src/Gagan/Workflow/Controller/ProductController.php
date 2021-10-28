@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Acme\TestBundle\Controller;
+namespace App\Gagan\Workflow\Controller;
 
-use App\Acme\TestBundle\Document\Product;
+use App\Gagan\Workflow\Document\Product;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use PHPUnit\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\SerializerInterface;
-
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Workflow\Exception\NotEnabledTransitionException;
 use Symfony\Component\Workflow\Registry;
@@ -26,14 +25,12 @@ class ProductController extends AbstractController
         private DocumentManager     $dm,
     )
     {
-        $this->serializer = $serializer;
-
     }
 
     /**
      * @Route("/api/admin/products"),methods={"GET"})
      */
-    public function index(DocumentManager $dm)
+    public function index(DocumentManager $dm):JsonResponse
     {
         $user = $this->get('security.token_storage')->getToken()->getUser();
         $products = $dm->createQueryBuilder(Product::class)

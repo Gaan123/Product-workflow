@@ -9,7 +9,7 @@ framework:
         type: 'method'
         property: 'status'
       supports:
-        - App\Acme\TestBundle\Document\Product
+        - App\Gagan\Workflow\Document\Product
       initial_marking: draft
       places:
         - draft

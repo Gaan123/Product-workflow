@@ -1,0 +1,37 @@
+framework:
+  workflows:
+    product_publishing:
+      events_to_dispatch: [ 'workflow.enter', 'workflow.completed' ]
+      type: 'state_machine' # or 'state_machine'
+      audit_trail:
+        enabled: true
+      marking_store:
+        type: 'method'
+        property: 'status'
+      supports:
+        - App\Acme\TestBundle\Document\Product
+      initial_marking: draft
+      places:
+        - draft
+        - reviewing
+        - reviewed
+        - seo_reviewing
+        - published
+      transitions:
+        to_review:
+          from: draft
+          to: reviewing
+        to_reviewed:
+          from: reviewing
+          to: reviewed
+        reject:
+          from: reviewing
+          to: draft
+
+        publish:
+          from: reviewed
+          to: published
+        seo_reject:
+          from: reviewed
+          to: draft
+

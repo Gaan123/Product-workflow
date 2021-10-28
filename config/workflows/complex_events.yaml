@@ -1,0 +1,42 @@
+framework:
+    workflows:
+        complex_events:
+            type: workflow
+            marking_store:
+                type: multiple_state
+                arguments:
+                    - complexState
+            supports:
+                - App\Document\BeerGlass
+            places:
+                - clean
+                - empty
+                - filling
+                - full
+                - partly_full
+                - dirty
+            transitions:
+                pour:
+                    from: [clean, empty]
+                    to: [dirty, filling]
+                stop_filling:
+                    from: filling
+                    to: full
+                start_drinking:
+                    from: full
+                    to: partly_full
+                swig:
+                    from: partly_full
+                    to: partly_full
+                finish:
+                    from: partly_full
+                    to: empty
+                drain_pour_from_full:
+                    from: full
+                    to: empty
+                drain_pour_from_partial:
+                    from: partly_full
+                    to: empty
+                wash:
+                    from: [dirty, empty]
+                    to: [clean, empty]
